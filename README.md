@@ -1,7 +1,6 @@
 # Super Cashier
 
 
-
 ## Background Problems
 A supermarket owner is expanding the business by creating a self-service cashier system so that customers can add item's name, quantity, and price themselves to the system.
 
@@ -49,13 +48,15 @@ class transaction:
 
 Creating a new class named transaction and use init to initialize the attributes of the class.
 
-```def add_item(self, nama_item, qty_item, harga_item):
+```
+def add_item(self, nama_item, qty_item, harga_item):
         self.items[nama_item] = [qty_item, harga_item]
         print(f"Item {nama_item} berhasil ditambahkan.")
         print(f"Item yang dibeli adalah{self.items}")
 ```
 Adding a new item by inputting item name, quantity, and the price.
-```def update_item_name(self, nama_item, nama_item_baru):
+```
+def update_item_name(self, nama_item, nama_item_baru):
         if nama_item in self.items:
             self.items[nama_item_baru] = self.items.get(nama_item)
             self.items.pop(nama_item)
@@ -64,7 +65,8 @@ Adding a new item by inputting item name, quantity, and the price.
             print(f"Item {nama_item} tidak ditemukan.")
 ```
 Updating item name by inputting item name and the new item name.
-```def update_item_qty(self, nama_item, qty_item_baru):
+```
+def update_item_qty(self, nama_item, qty_item_baru):
         if nama_item in self.items:
             self.items[nama_item][0] = qty_item_baru
             print(f"Jumlah item {nama_item} berhasil diubah.")
@@ -72,7 +74,8 @@ Updating item name by inputting item name and the new item name.
             print(f"Item {nama_item} tidak ditemukan.")
 ```
 Updating item quantity by inputting item name and the new item quantity.
-```def update_item_price(self, nama_item, harga_item_baru):
+```
+def update_item_price(self, nama_item, harga_item_baru):
         if nama_item in self.items:
             self.items[nama_item][1] = harga_item_baru
             print(f"Harga item {nama_item} berhasil diubah.")
@@ -80,7 +83,8 @@ Updating item quantity by inputting item name and the new item quantity.
             print(f"Item {nama_item} tidak ditemukan.")
 ```
 Updating item price by inputting item name and the new item price.
-```def delete_item(self, nama_item):
+```
+def delete_item(self, nama_item):
         if nama_item in self.items:
             self.items.pop(nama_item)
             print(f"Item {nama_item} telah dihapus.")
@@ -89,12 +93,14 @@ Updating item price by inputting item name and the new item price.
             print(f"Item {nama_item} tidak ditemukan.")
 ```
 Deleting one item by inputting the item name.
-```def reset_transaction(self):
+```
+def reset_transaction(self):
         self.items.clear()
         print("Semua item berhasil dihapus!")
 ```
 Resetting transaction and clearing the order list.
-```def check_order(self):
+```
+def check_order(self):
         errors = 0
         table = []
         for item in self.items.values():
@@ -116,7 +122,8 @@ Resetting transaction and clearing the order list.
             return self.items
 ```
 Checking order if there was any incorrect input.
-```def check_out(self):
+```
+def check_out(self):
         diskon = 0
         total_belanja = 0
         items_for_upload = []
@@ -151,7 +158,8 @@ Checking order if there was any incorrect input.
         self.insert_to_table(items_for_upload)
 ```
 Doing a check out and printing the order details and the total price for the customers.
-```def insert_to_table(self, items_for_upload):
+```
+def insert_to_table(self, items_for_upload):
         # Membuat engine
         # Konfigurasi koneksi ke database sqlite
         engine = create_engine('sqlite:///example.db')
