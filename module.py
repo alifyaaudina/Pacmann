@@ -16,7 +16,6 @@ class transaction:
     def add_item(self, nama_item, qty_item, harga_item):
         self.items[nama_item] = [qty_item, harga_item]
         print(f"Item {nama_item} berhasil ditambahkan.")
-        print(f"Item yang dibeli adalah{self.items}")
 
     def update_item_name(self, nama_item, nama_item_baru):
         if nama_item in self.items:
@@ -44,7 +43,6 @@ class transaction:
         if nama_item in self.items:
             self.items.pop(nama_item)
             print(f"Item {nama_item} telah dihapus.")
-            print(self.items)
         else:
             print(f"Item {nama_item} tidak ditemukan.")
 
